@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 class AnswerSelection extends Component{
     render(){
         return(
-            <Button variant="secondary" size="lg" block>
+            <Button variant="secondary" size="lg" className='my-2' block>
                 Large button
             </Button>
         )
