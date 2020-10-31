@@ -1,11 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class Landing extends Component{
-    render(){
-        return(
-            <h1>Landing Page</h1>
-        )
-    }
+function Landing(){
+    return(
+        <h1>Landing Page</h1>
+    )
 }
 
 export default Landing;

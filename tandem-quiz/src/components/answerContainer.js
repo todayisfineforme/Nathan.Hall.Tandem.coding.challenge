@@ -1,32 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import AnswerSelection from './answerSelection';
 
-class AnswerContainer extends Component{
-    render(){
-        return(
-            <Container>
-                <Row>
-                    <Col>
-                        <AnswerSelection/>
-                    </Col>
-                    <Col>
-                        <AnswerSelection/>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <AnswerSelection/>
-                    </Col>
-                    <Col>
-                        <AnswerSelection/>
-                    </Col>
-                </Row>
-            </Container>
-        )
-    }
+function AnswerContainer(){
+    return(
+        <Container>
+            <Row>
+                    <AnswerSelection/>
+                    <AnswerSelection/>
+            </Row>
+            <Row>
+                    <AnswerSelection/>
+                    <AnswerSelection/>
+            </Row>
+        </Container>
+    )
 }
 
 export default AnswerContainer;
