@@ -9,7 +9,7 @@ function AnswerSelection(props) {
         <Row>   
             <Col>
                 <Button variant="secondary" size="lg" className='my-2' block onClick={props.updateButton}>
-                    Large button
+                    {props.answer}
                 </Button>
             </Col>
         </Row> 

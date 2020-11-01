@@ -11,10 +11,7 @@ export function questionConstructor(obj){
         this.correct = correct; 
     }
 
-    console.log("pre");
     tempAnswers.push(tempCorrect);
-    console.log("post")
-    console.log(tempAnswers)
     shuffle(tempAnswers);
     const newQuestion = new arrangedQuestion(tempQuestion, tempAnswers, tempCorrect)
 

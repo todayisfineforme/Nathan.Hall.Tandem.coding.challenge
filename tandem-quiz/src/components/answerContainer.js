@@ -5,12 +5,12 @@ import Col from 'react-bootstrap/Col';
 import AnswerSelection from './answerSelection';
 
 function AnswerContainer(props){
+    console.log(props);
     return(
         <Container>
-                <AnswerSelection updateButton={props.updateButton}/>
-                <AnswerSelection/>
-                <AnswerSelection/>
-                <AnswerSelection/>
+                {[...props.answers].map((answer) =>
+                <AnswerSelection updateButton={props.updateButton} answer={answer}/>
+                )}
         </Container>
     )
 }

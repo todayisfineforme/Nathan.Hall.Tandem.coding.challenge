@@ -6,7 +6,6 @@ export function roundConstructor(questions){
     shuffle(questions);
     for(let i=0; i < 10; i++){
         roundTemp.push(questionConstructor(questions[i]));
-        console.log("answer pushed" + i)
     };
     questions = roundTemp
     return(questions);

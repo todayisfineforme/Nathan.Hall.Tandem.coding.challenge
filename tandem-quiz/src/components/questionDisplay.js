@@ -19,6 +19,7 @@ class QuestionDisplay extends Component{
 
     updateButton = () => {
         console.log(this.state.round);
+        this.setState({ currentQuestion: this.state.currentQuestion + 1 })
     }
 
     roundOfTen = () => {
@@ -42,7 +43,7 @@ class QuestionDisplay extends Component{
                     </Row>
                     <Row>
                         <Col>
-                            <AnswerContainer updateButton={this.updateButton} answers={this.state.answers}/>
+                            <AnswerContainer updateButton={this.updateButton} answers={this.state.round[this.state.currentQuestion].answers}/>
                         </Col>
                     </Row>
                 </Jumbotron>
