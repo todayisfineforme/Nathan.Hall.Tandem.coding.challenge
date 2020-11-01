@@ -4,17 +4,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import AnswerSelection from './answerSelection';
 
-function AnswerContainer(){
+function AnswerContainer(props){
     return(
         <Container>
-            <Row>
-                    <AnswerSelection/>
-                    <AnswerSelection/>
-            </Row>
-            <Row>
-                    <AnswerSelection/>
-                    <AnswerSelection/>
-            </Row>
+                <AnswerSelection updateButton={props.updateButton}/>
+                <AnswerSelection/>
+                <AnswerSelection/>
+                <AnswerSelection/>
         </Container>
     )
 }
