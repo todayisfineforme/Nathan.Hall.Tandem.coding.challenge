@@ -5,21 +5,24 @@ import Col from 'react-bootstrap/Col';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import QuestionContainer from './questionContainer';
 import AnswerContainer from './answerContainer';
-import { shuffle } from '../logic/shuffle';
-import { questionConstructor } from '../logic/questionConstructor';
+// import { shuffle } from '../logic/shuffle';
+// import { questionConstructor } from '../logic/questionConstructor';
 import { roundConstructor } from '../logic/roundConstructor';
 
 const questionData = require('../data/Apprentice_TandemFor400_Data.json');
 
-class QuestionDisplay extends Component{
+class QuizDisplay extends Component{
     state = {
         round: [{question:"", answers:[], correct:""}],
-        currentQuestion: 0
+        currentQuestion: 0,
+        score: 0 
     }
 
     updateButton = () => {
         console.log(this.state.round);
-        this.setState({ currentQuestion: this.state.currentQuestion + 1 })
+        setTimeout(() => {
+            this.setState({ currentQuestion: this.state.currentQuestion + 1 })
+        }, 3000);
     }
 
     roundOfTen = () => {
@@ -43,7 +46,11 @@ class QuestionDisplay extends Component{
                     </Row>
                     <Row>
                         <Col>
-                            <AnswerContainer updateButton={this.updateButton} answers={this.state.round[this.state.currentQuestion].answers}/>
+                            <AnswerContainer 
+                                updateButton={this.updateButton} 
+                                answers={this.state.round[this.state.currentQuestion].answers}
+                                correct={this.state.round[this.state.currentQuestion].correct}
+                            />
                         </Col>
                     </Row>
                 </Jumbotron>
@@ -52,4 +59,4 @@ class QuestionDisplay extends Component{
     }
 }
 
-export default QuestionDisplay;
+export default QuizDisplay;
