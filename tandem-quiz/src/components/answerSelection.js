@@ -10,6 +10,7 @@ function AnswerSelection(props) {
     function checkAnswer(){
         if (props.correct === props.answer) {
             setConfirm('success')
+            props.updateScore();
         }else{
             setConfirm('danger')
         }

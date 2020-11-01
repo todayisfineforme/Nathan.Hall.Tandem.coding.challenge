@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import QuestionContainer from './questionContainer';
 import AnswerContainer from './answerContainer';
+import Score from './score';
 // import { shuffle } from '../logic/shuffle';
 // import { questionConstructor } from '../logic/questionConstructor';
 import { roundConstructor } from '../logic/roundConstructor';
@@ -16,6 +17,11 @@ class QuizDisplay extends Component{
         round: [{question:"", answers:[], correct:""}],
         currentQuestion: 0,
         score: 0 
+    }
+
+    updateScore = () =>{
+        this.setState({ score: this.state.score + 1 });
+        console.log(this.state.score);
     }
 
     updateButton = () => {
@@ -40,6 +46,9 @@ class QuizDisplay extends Component{
             <Container>
                 <Jumbotron>
                     <Row>
+                        <Score score={this.state.score}/>
+                    </Row>
+                    <Row>
                         <Col>
                             <QuestionContainer question={this.state.round[this.state.currentQuestion].question}/>
                         </Col>
@@ -50,6 +59,7 @@ class QuizDisplay extends Component{
                                 updateButton={this.updateButton} 
                                 answers={this.state.round[this.state.currentQuestion].answers}
                                 correct={this.state.round[this.state.currentQuestion].correct}
+                                updateScore={this.updateScore}
                             />
                         </Col>
                     </Row>

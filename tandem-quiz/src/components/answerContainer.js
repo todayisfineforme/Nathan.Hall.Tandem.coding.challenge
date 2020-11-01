@@ -21,7 +21,8 @@ function AnswerContainer(props){
         <Container>
                 {[...props.answers].map((answer) =>
                     <AnswerSelection 
-                        updateButton={props.updateButton} 
+                        updateButton={props.updateButton}
+                        updateScore={props.updateScore} 
                         disableButton={disableButton}
                         enableButton={enableButton}
                         correct={props.correct} 
