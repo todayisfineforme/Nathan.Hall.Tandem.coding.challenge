@@ -6,6 +6,7 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 import QuestionContainer from './questionContainer';
 import AnswerContainer from './answerContainer';
 import Score from './score';
+import Timer from './timer';
 // import { shuffle } from '../logic/shuffle';
 // import { questionConstructor } from '../logic/questionConstructor';
 import { roundConstructor } from '../logic/roundConstructor';
@@ -13,32 +14,13 @@ import { roundConstructor } from '../logic/roundConstructor';
 const questionData = require('../data/Apprentice_TandemFor400_Data.json');
 
 class QuizDisplay extends Component{
-    state = {
-        round: [{question:"", answers:[], correct:""}],
-        currentQuestion: 0,
-        score: 0 
-    }
-
-    updateScore = () =>{
-        this.setState({ score: this.state.score + 1 });
-        console.log(this.state.score);
-    }
-
-    updateButton = () => {
-        console.log(this.state.round);
-        setTimeout(() => {
-            this.setState({ currentQuestion: this.state.currentQuestion + 1 })
-        }, 3000);
-    }
-
-    roundOfTen = () => {
-        this.setState({
-            round:roundConstructor(questionData)
-        })
+    constructor(props){
+        super(props);
     }
 
     componentDidMount(){
-        this.roundOfTen();
+        this.props.roundOfTen();
+        this.props.quizTimer();
     }
 
     render(){
@@ -46,20 +28,21 @@ class QuizDisplay extends Component{
             <Container>
                 <Jumbotron>
                     <Row>
-                        <Score score={this.state.score}/>
+                        <Timer timer={this.props.timer}/>
+                        <Score score={this.props.score}/>
                     </Row>
                     <Row>
                         <Col>
-                            <QuestionContainer question={this.state.round[this.state.currentQuestion].question}/>
+                            <QuestionContainer question={this.props.round[this.props.currentQuestion].question}/>
                         </Col>
                     </Row>
                     <Row>
                         <Col>
                             <AnswerContainer 
-                                updateButton={this.updateButton} 
-                                answers={this.state.round[this.state.currentQuestion].answers}
-                                correct={this.state.round[this.state.currentQuestion].correct}
-                                updateScore={this.updateScore}
+                                updateButton={this.props.updateButton} 
+                                answers={this.props.round[this.props.currentQuestion].answers}
+                                correct={this.props.round[this.props.currentQuestion].correct}
+                                updateScore={this.props.updateScore}
                             />
                         </Col>
                     </Row>

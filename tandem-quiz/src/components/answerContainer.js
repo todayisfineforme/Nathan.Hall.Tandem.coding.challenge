@@ -6,8 +6,6 @@ import AnswerSelection from './answerSelection';
 
 function AnswerContainer(props){
     const [buttonState, setButtonState] = useState(false)
-    
-    console.log(props);
 
     function disableButton(){
         setButtonState(true);

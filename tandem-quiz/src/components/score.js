@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 function Score(props){
     return(
         <Col md={{ span: 4, offset: 4 }}>
-            <h1>Score: {props.score}</h1>
+            <h1 style={{ textAlign: "right" }}>Score: {props.score}</h1>
         </Col>
     )
 }
