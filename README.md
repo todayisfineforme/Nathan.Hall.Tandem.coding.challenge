@@ -5,12 +5,28 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/kefranabg/readme-md-generator/graphs/commit-activity)
 [![License: MIT](https://img.shields.io/github/license/todayisfineforme/Tandem Trivia Trainer)](#)
 
-## Description
- A trivia training app built for the Tandem for 400 Coding Challenge. it generates a 10 question round from a predetermined list supplied at the beginning of the challenge. question order is shuffled as well as answer order within those questions.
 
 ### 🏠 Homepage https://github.com/todayisfineforme/Nathan.Hall.Tandem.coding.challenge
 
 ### ✨ Demo http://tandem-trivia-400.s3-website.us-east-2.amazonaws.com/
+
+## Description
+ A trivia training app built for the Tandem for 400 Coding Challenge. it generates a 10 question round from a predetermined list supplied at the beginning of the challenge. question order is shuffled as well as answer order within those questions.
+
+## Challenge Assumptions
+- A round of trivia has 10 Questions
+- All questions are multiple-choice questions
+- Your score does not need to update in real time
+- Results can update on form submit, button click, or any interaction you choose
+- We(Tandem) will provide you with the trivia data such as the questions, correct and incorrect answers via a JSON file.
+
+## Challenge Acceptance Criteria
+- A user can view questions.
+- Questions with their multiple choice options must be displayed one at a time.
+- Questions should not repeat in a round.
+- A user can select only 1 answer out of the 4 possible answers.
+- The correct answer must be revealed after a user has submitted their answer
+- A user can see the score they received at the end of the round
 
 ## Prerequisites
 
