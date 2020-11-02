@@ -1,20 +1,11 @@
-<h1 align="center">Welcome to Tandem for 400 Trivia Trainer 👋</h1>
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
-  <img src="https://img.shields.io/badge/npm-%3E%3D5.5.0-blue.svg" />
-  <img src="https://img.shields.io/badge/node-%3E%3D9.3.0-blue.svg" />
-  <a href="https://github.com/kefranabg/readme-md-generator#readme" target="_blank">
-    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
-  </a>
-  <a href="https://github.com/kefranabg/readme-md-generator/graphs/commit-activity" target="_blank">
-    <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
-  </a>
-  <a href="#" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/github/license/todayisfineforme/Tandem for 400 Trivia Trainer" />
-  </a>
-</p>
+# Welcome to Tandem Trivia Trainer 👋
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
+![Prerequisite](https://img.shields.io/badge/npm-%3E%3D5.5.0-blue.svg)
+![Prerequisite](https://img.shields.io/badge/node-%3E%3D9.3.0-blue.svg)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/kefranabg/readme-md-generator/graphs/commit-activity)
+[![License: MIT](https://img.shields.io/github/license/todayisfineforme/Tandem Trivia Trainer)](#)
 
-> A trivia training app built for the Tandem for 400 Coding Challenge.
+> A trivia training app built for the Tandem for 400 Coding Challenge. it generates a 10 question round from a predetermined list supplied at the beginning of the challenge. question order is shuffled as well as answer order within those questions.
 
 ### 🏠 [Homepage](https://github.com/todayisfineforme/Nathan.Hall.Tandem.coding.challenge)
 
@@ -37,12 +28,6 @@ npm install
 npm start
 ```
 
-## Run tests
-
-```sh
-npm run test
-```
-
 ## Author
 
 👤 **Nathan Hall**
@@ -53,6 +38,7 @@ npm run test
 ## Show your support
 
 Give a ⭐️ if this project helped you!
+
 
 ***
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
