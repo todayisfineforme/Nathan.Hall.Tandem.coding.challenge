@@ -29,10 +29,10 @@ npm install
 npm start
 ```
 ## Future plans
--- add a simple backend that stores high scores so that users company wide could compare their scores. 
--- adding a larger bank of questions, as well as the ability to have multiple rounds.
--- add the ability to have a round that has you answer as many questions as you can in a fixed period of time.
--- possibly add a "party play" feature that has multiple users in the same instance all competing against one another
+-add a simple backend that stores high scores so that users company wide could compare their scores. 
+-adding a larger bank of questions, as well as the ability to have multiple rounds.
+-add the ability to have a round that has you answer as many questions as you can in a fixed period of time.
+-possibly add a "party play" feature that has multiple users in the same instance all competing against one another
 
 ## Author
 
