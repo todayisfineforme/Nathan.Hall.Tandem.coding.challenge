@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 function Timer(props){
     return(
         <Col>
-            <h1> Timer: {props.timer}</h1>
+            <h1 style={{textAlign:"left"}}> Timer: {props.timer}</h1>
         </Col>
     )
 }

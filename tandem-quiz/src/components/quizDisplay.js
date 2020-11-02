@@ -7,16 +7,8 @@ import QuestionContainer from './questionContainer';
 import AnswerContainer from './answerContainer';
 import Score from './score';
 import Timer from './timer';
-// import { shuffle } from '../logic/shuffle';
-// import { questionConstructor } from '../logic/questionConstructor';
-import { roundConstructor } from '../logic/roundConstructor';
-
-const questionData = require('../data/Apprentice_TandemFor400_Data.json');
 
 class QuizDisplay extends Component{
-    constructor(props){
-        super(props);
-    }
 
     componentDidMount(){
         this.props.roundOfTen();

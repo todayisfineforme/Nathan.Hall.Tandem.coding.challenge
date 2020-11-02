@@ -1,13 +1,13 @@
-import './App.css';
+// import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import React, { Component } from "react";
 import Landing from './components/landing';
 import QuizDisplay from './components/quizDisplay';
 import { roundConstructor } from './logic/roundConstructor';
+
 const questionData = require('./data/Apprentice_TandemFor400_Data.json');
 
-class App extends Component{
-    
+class App extends Component{  
     state = {
         round: [{question:"", answers:[], correct:""}],
         currentQuestion: 0,
@@ -26,14 +26,24 @@ class App extends Component{
     }
 
     updateScore = () =>{
-        this.setState({ score: this.state.score + 1 });
+        if (this.state.timer > 8){
+            this.setState({ score: this.state.score + 40 });
+        }else if (this.state.timer <= 7 && this.state.timer > 6){
+            this.setState({ score: this.state.score + 30 });
+        }else if (this.state.timer <= 5 && this.state.timer > 4){
+            this.setState({ score: this.state.score + 20 });
+        }else if (this.state.timer <= 3 && this.state.timer > 2){
+            this.setState({ score: this.state.score + 10 });
+        }else if (this.state.timer <=1){
+            this.setState({ score: this.state.score + 5 });
+        }
     }
 
     updateButton = () => {
         setTimeout(() => {
             this.setState({ currentQuestion: this.state.currentQuestion + 1 });
             this.setState({timer: 12})
-        }, 3000);
+        }, 2000);
     }
 
     roundOfTen = () => {
