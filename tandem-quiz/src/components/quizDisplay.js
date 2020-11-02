@@ -10,6 +10,7 @@ import Timer from './timer';
 
 class QuizDisplay extends Component{
 
+    //runs on primary render to build a ten question round and start the timer
     componentDidMount(){
         this.props.roundOfTen();
         this.props.quizTimer();
@@ -35,6 +36,7 @@ class QuizDisplay extends Component{
                                 answers={this.props.round[this.props.currentQuestion].answers}
                                 correct={this.props.round[this.props.currentQuestion].correct}
                                 updateScore={this.props.updateScore}
+                                currentQuestion={this.props.currentQuestion}
                             />
                         </Col>
                     </Row>

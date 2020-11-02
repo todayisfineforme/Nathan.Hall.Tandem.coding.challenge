@@ -1,10 +1,11 @@
-// import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import React, { Component } from "react";
 import Landing from './components/landing';
 import QuizDisplay from './components/quizDisplay';
 import { roundConstructor } from './logic/roundConstructor';
+import FinalScore from './components/finalScore';
 
+// importing json question data supplied by the challenge
 const questionData = require('./data/Apprentice_TandemFor400_Data.json');
 
 class App extends Component{  
@@ -15,6 +16,7 @@ class App extends Component{
         timer: 12
     }
 
+    //timer function to countdown from 12 to 0, passed down to child timer component
     quizTimer = () => {
         this.myInterval = setInterval(() => {
             if (this.state.timer > 0) {
@@ -25,27 +27,35 @@ class App extends Component{
         }, 1000)
     }
 
+    //conditionals determine lower point payout vs. how much time is left on the clock
     updateScore = () =>{
-        if (this.state.timer > 8){
+        if (this.state.timer >= 8){
             this.setState({ score: this.state.score + 40 });
-        }else if (this.state.timer <= 7 && this.state.timer > 6){
+        }else if (this.state.timer < 8 && this.state.timer >= 6){
             this.setState({ score: this.state.score + 30 });
-        }else if (this.state.timer <= 5 && this.state.timer > 4){
+        }else if (this.state.timer < 6 && this.state.timer >= 4){
             this.setState({ score: this.state.score + 20 });
-        }else if (this.state.timer <= 3 && this.state.timer > 2){
+        }else if (this.state.timer < 4 && this.state.timer >= 2){
             this.setState({ score: this.state.score + 10 });
-        }else if (this.state.timer <=1){
+        }else if (this.state.timer < 2){
             this.setState({ score: this.state.score + 5 });
         }
+        //small timeout ensures session storage updates after state updates but before href redirect happens on final question
+        setTimeout(() => {
+            //using sessionStorage to get around the react-router-dom resetting state on render of this component
+            sessionStorage.setItem('score', this.state.score);
+        }, 50);
     }
 
+    //updates currentQuestion count on answerSelection child button press
     updateButton = () => {
         setTimeout(() => {
             this.setState({ currentQuestion: this.state.currentQuestion + 1 });
-            this.setState({timer: 12})
+            this.setState({timer: 12});
         }, 2000);
     }
 
+    //function builds ten question round and set that array in the state
     roundOfTen = () => {
         this.setState({
             round:roundConstructor(questionData)
@@ -70,7 +80,7 @@ class App extends Component{
                         />)
                     }
                 />
-                {/* <Route path='/portfolio' component={} /> */}
+                <Route path='/finalScore' render={(props) =>( <FinalScore {...props} score={this.state.score} />)}/>
             </Switch>
         );
     }

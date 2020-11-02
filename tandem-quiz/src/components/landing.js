@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
 import '../App.css';
 
 function Landing(){
@@ -57,6 +58,11 @@ function Landing(){
                                 </tr>
                             </tbody>
                         </Table>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col className="text-center">
+                        <Button variant="secondary" size="lg " href="/trivia"><h1>Start the Quiz!</h1></Button>
                     </Col>
                 </Row>
             </Jumbotron>

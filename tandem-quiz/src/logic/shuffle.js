@@ -1,3 +1,5 @@
+// this shuffles incoming arrays
+
 export function shuffle(array){
     let i = array.length - 1;
     for (; i > 0; i--) {

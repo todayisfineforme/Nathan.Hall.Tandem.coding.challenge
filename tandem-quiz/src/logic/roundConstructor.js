@@ -1,3 +1,5 @@
+//this builds a ten question round from a supplied array of objects
+
 import { shuffle } from './shuffle';
 import { questionConstructor } from './questionConstructor';
 

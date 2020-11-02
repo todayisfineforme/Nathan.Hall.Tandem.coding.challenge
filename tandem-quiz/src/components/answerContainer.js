@@ -5,10 +5,12 @@ import AnswerSelection from './answerSelection';
 function AnswerContainer(props){
     const [buttonState, setButtonState] = useState(false)
 
+    //passed down to child so that a button click in a single child disables all the buttons under this parent
     function disableButton(){
         setButtonState(true);
     }
 
+    //enables all of the buttons again under this parent
     function enableButton(){
         setButtonState(false);
     }
@@ -17,6 +19,7 @@ function AnswerContainer(props){
         <Container>
                 {[...props.answers].map((answer) =>
                     <AnswerSelection 
+                        currentQuestion={props.currentQuestion}
                         updateButton={props.updateButton}
                         updateScore={props.updateScore} 
                         disableButton={disableButton}
