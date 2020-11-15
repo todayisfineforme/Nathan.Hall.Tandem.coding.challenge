@@ -42,7 +42,7 @@ npm install
 ## Usage
 
 ```sh
-npm start
+npm start 
 ```
 ## Future plans
 - add a simple backend that stores high scores so that users company wide could compare their scores. 
