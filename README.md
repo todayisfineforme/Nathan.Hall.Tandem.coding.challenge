@@ -1,6 +1,6 @@
 # Welcome to Tandem Trivia Trainer 👋
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
-![Prerequisite](https://img.shields.io/badge/npm-%3E%3D5.5.0-blue.svg)
+![Prerequisite](https://img.shields.io/badge/npm-%3E%3D5.5.0-blue.svg) 
 ![Prerequisite](https://img.shields.io/badge/node-%3E%3D9.3.0-blue.svg)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/kefranabg/readme-md-generator/graphs/commit-activity)
 [![License: MIT](https://img.shields.io/github/license/todayisfineforme/Tandem Trivia Trainer)](#)
